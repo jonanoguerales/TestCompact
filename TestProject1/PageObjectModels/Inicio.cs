@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace TestProject1.PageObjectModels
+namespace TestCompact.PageObjectModels
 {
     public class Inicio
     {

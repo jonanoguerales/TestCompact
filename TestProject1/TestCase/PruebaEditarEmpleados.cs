@@ -2,11 +2,11 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using TestProject1.PageObjectModels;
-using TestProject1.Utilities;
+using TestCompact.PageObjectModels;
+using TestCompact.Utilities;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace TestProject1.TestCase
+namespace TestCompact.TestCase
 {
     //Clase que contiene los casos de pruebas de Login
 
@@ -155,6 +155,110 @@ namespace TestProject1.TestCase
 
                 ValidaciónAlerts.ValidacionAlert("Registro actualizado correctamente");
             }
+        }
+
+        //Método para verificar los alerts en la edicion de persona
+        [Test]
+        public void Test_002_verificacion_alerts()
+        {
+            // Localizar el botón "Guardar"
+            IWebElement botonGuardar = Driver.FindElement(By.CssSelector("#save > img"));
+
+            Actions actions = new Actions(Driver);
+
+            //---Validacion alert nombre---
+            //Ingresar datos en input nombre
+            PaginaEmpleados.InputNombre("Vacio");
+            // Desplazarse hasta el botón "Guardar"
+            actions.MoveToElement(botonGuardar);
+            actions.Perform();
+            // Hacer clic en el botón "Guardar"
+            botonGuardar.Click();
+            //validar alert nombre
+            ValidaciónAlerts.ValidacionAlert("El nombre es necesario");
+
+            //---Validacion alert primer apellido---
+            //Ingresar datos en input nombre
+            PaginaEmpleados.InputNombre("Prueba");
+            //Ingresar datos en input primer apellido
+            PaginaEmpleados.InputPrimerApellido("");
+            // Desplazarse hasta el botón "Guardar"
+            actions.MoveToElement(botonGuardar);
+            actions.Perform();
+            // Hacer clic en el botón "Guardar"
+            botonGuardar.Click();
+            //validar alert primer apellido
+            ValidaciónAlerts.ValidacionAlert("El primer apellido es necesario");
+
+            //---Validacion alert documento de identidad---
+            //Ingresar datos en input primer apellido
+            PaginaEmpleados.InputPrimerApellido("Prueba1");
+            //Ingresar datos en input socumento de identidad
+            PaginaEmpleados.InputDocumentoDeIdentidad("");
+            // Desplazarse hasta el botón "Guardar"
+            actions.MoveToElement(botonGuardar);
+            actions.Perform();
+            // Hacer clic en el botón "Guardar"
+            botonGuardar.Click();
+            //validar alert documento de identidad
+            ValidaciónAlerts.ValidacionAlert("El documento de identidad es necesario");
+
+            //---Validacion alert identificador nomina---
+            //Ingresar datos en input socumento de identidad
+            PaginaEmpleados.InputDocumentoDeIdentidad("0283455A");
+            //Ingresar datos en input identificador nomina
+            PaginaEmpleados.InputIdentificadorNomina("");
+            // Desplazarse hasta el botón "Guardar"
+            actions.MoveToElement(botonGuardar);
+            actions.Perform();
+            // Hacer clic en el botón "Guardar"
+            botonGuardar.Click();
+            //validar alert nomina
+            ValidaciónAlerts.ValidacionAlert("El número del empleado es necesario");
+
+            //---Validacion alert permisos---
+            //Ingresar datos en input identificador nomina
+            PaginaEmpleados.InputIdentificadorNomina("7777777");
+            //Ingresar datos en input permisos
+            PaginaEmpleados.BoxDesplegablePermisos("-- Seleccione una opción --");
+            // Desplazarse hasta el botón "Guardar"
+            actions.MoveToElement(botonGuardar);
+            actions.Perform();
+            // Hacer clic en el botón "Guardar"
+            botonGuardar.Click();
+            //validar alert permisos
+            ValidaciónAlerts.ValidacionAlert("El perfil es necesario");
+
+            //---Validacion alert calendario---
+            //Ingresar datos en input permisos
+            PaginaEmpleados.BoxDesplegablePermisos("001 - Asistencia R26");
+            //Ingresar datos en input calendario
+            PaginaEmpleados.BoxDesplegableCalendario("-- Seleccione una opción --");
+            // Desplazarse hasta el botón "Guardar"
+            actions.MoveToElement(botonGuardar);
+            actions.Perform();
+            // Hacer clic en el botón "Guardar"
+            botonGuardar.Click();
+            //validar alert calendario
+            ValidaciónAlerts.ValidacionAlert("El calendario es necesario");
+
+            //---Validacion alert zona horaria---
+            //Ingresar datos en input calendario
+            PaginaEmpleados.BoxDesplegableCalendario("2 - Calendario PYV México");
+            // Localizar el campo de entrada por XPath
+            IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentIdTimeZone\"]/input"));
+            // Limpiar el contenido del campo de entrada
+            campoInput.Clear();
+            //Ingresar datos en input zona horaria
+            campoInput.SendKeys("-- Seleccione una opción --");
+            // Desplazarse hasta el botón "Guardar"
+            actions.MoveToElement(botonGuardar);
+            actions.Perform();
+            // Hacer clic en el botón "Guardar"
+            botonGuardar.Click();
+            //validar alert zona horaria
+            ValidaciónAlerts.ValidacionAlert("La zona horaria es necesaria");
+
         }
 
         //TearDown: Anotación de Nunit para ejecutar un método después de cada test

@@ -1,6 +1,6 @@
 ﻿using OfficeOpenXml;
 
-namespace TestProject1.Utilities
+namespace TestCompact.Utilities
 {
     public class ExcelDataReader
     {

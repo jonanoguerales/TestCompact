@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework.Interfaces;
 
-namespace TestProject1.Utilities
+namespace TestCompact.Utilities
 {
     public class LogsError
     {

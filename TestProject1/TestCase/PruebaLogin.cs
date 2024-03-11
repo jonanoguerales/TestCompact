@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework.Interfaces;
 using OfficeOpenXml;
 using OpenQA.Selenium;
-using TestProject1.PageObjectModels;
+using TestCompact.PageObjectModels;
 
-namespace TestProject1.TestCase
+namespace TestCompact.TestCase
 {
 
 

@@ -1,8 +1,8 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using TestProject1.PageObjectModels;
+using TestCompact.PageObjectModels;
 
-namespace TestProject1.TestCase
+namespace TestCompact.TestCase
 {
     public class TestValidacionesInteface
     {

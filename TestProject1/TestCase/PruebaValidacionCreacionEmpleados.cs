@@ -2,11 +2,11 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using TestProject1.PageObjectModels;
-using TestProject1.Utilities;
+using TestCompact.PageObjectModels;
+using TestCompact.Utilities;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace TestProject1.TestCase
+namespace TestCompact.TestCase
 {
     //Clase que contiene los casos de pruebas de Login
 

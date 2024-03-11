@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace TestProject1.PageObjectModels
+namespace TestCompact.PageObjectModels
 {
     //Clase para representar la pagina de Login
     public class PaginaLogin

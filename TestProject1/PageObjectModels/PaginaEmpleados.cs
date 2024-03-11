@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 
-namespace TestProject1.PageObjectModels
+namespace TestCompact.PageObjectModels
 {
     //Clase para representar la pagina de empleados
     public class PaginaEmpleados
@@ -329,6 +329,8 @@ namespace TestProject1.PageObjectModels
             IWebElement btnDesplegable = Driver.FindElement(By.Id("dropdownlistArrowcbPerfiles"));
             btnDesplegable.Click();
 
+            Thread.Sleep(100);
+
             // Configurar una pausa implícita de 10 segundos
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
@@ -355,7 +357,8 @@ namespace TestProject1.PageObjectModels
             //Input calendario
             IWebElement btnDesplegableCalendario = Driver.FindElement(By.Id("dropdownlistArrowcbCalendario"));
             btnDesplegableCalendario.Click();
-            Thread.Sleep(TimeSpan.FromSeconds(0.5));
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
 
             IWebElement boxDesplegableCalendario = Driver.FindElement(By.CssSelector("#listBoxContentinnerListBoxcbCalendario > div"));
             
