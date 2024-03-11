@@ -506,95 +506,90 @@ namespace TestCompact.TestCase
             }
         }
 
-        ////Método que implementa el caso de alta de nueva persona,con los datos proporcionados desde el archivo Excel, comprueba la correcta verificación del alert de "La fecha de alta es necesaria" No consigo eliminar la hora
-        //[Test]
-        //public void Test_009_verificación_la_fecha_de_alta_es_necesaria()
-        //{
-        //    // Ruta del archivo Excel
-        //    string filePath = @"C:\\Users\\jona\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+        //Método que implementa el caso de alta de nueva persona,con los datos proporcionados desde el archivo Excel, comprueba la correcta verificación del alert de "La fecha de alta es necesaria" No consigo eliminar la hora
+        [Test]
+        public void Test_009_verificación_la_fecha_de_alta_es_necesaria()
+        {
+            // Ruta del archivo Excel
+            string filePath = @"C:\\Users\\jona\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
 
-        //    //Datos para recorrer el Excel
-        //    int inicioRow = 13;
-        //    int inicioCol = 6;
-        //    int finalRow = 13;
-        //    int finalCol = 23;
+            Actions actions = new Actions(Driver);
 
-        //    // Obtener datos del archivo Excel
-        //    IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(filePath, inicioRow, inicioCol, finalRow, finalCol);
+            //Datos para recorrer el Excel
+            int inicioRow = 13;
+            int inicioCol = 6;
+            int finalRow = 13;
+            int finalCol = 23;
 
-        //    // Iterar sobre los datos y ejecutar la prueba para cada conjunto de datos
-        //    foreach (var datos in datosExcel)
-        //    {
-        //        string row1 = (string)datos[0];
-        //        string row2 = (string)datos[1];
-        //        string row3 = (string)datos[2];
-        //        string row4 = (string)datos[3];
-        //        string row5 = (string)datos[4];
-        //        string row6 = (string)datos[5];
-        //        string row7 = (string)datos[6];
-        //        string row8 = (string)datos[7];
-        //        string row9 = (string)datos[8];
-        //        string row10 = (string)datos[9];
-        //        string row11 = (string)datos[10];
-        //        string row12 = (string)datos[11];
-        //        string row13 = (string)datos[12];
-        //        string row14 = (string)datos[13];
-        //        string row15 = (string)datos[14];
-        //        string row16 = (string)datos[15];
-        //        string row17 = (string)datos[16];
-        //        string row18 = (string)datos[17];
+            // Obtener datos del archivo Excel
+            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(filePath, inicioRow, inicioCol, finalRow, finalCol);
 
-        //        // Ejecutar la prueba con los datos obtenidos del Excel
-        //        PaginaEmpleados.InputNumEmpleado(row1);
-        //        PaginaEmpleados.InputIdentificadorNomina(row2);
-        //        PaginaEmpleados.InputNombre(row3);
-        //        PaginaEmpleados.InputPrimerApellido(row4);
-        //        PaginaEmpleados.InputSegundoApellido(row5);
-        //        PaginaEmpleados.InputNombreCorto(row6);
-        //        PaginaEmpleados.InputDocumentoDeIdentidad(row7);
-        //        PaginaEmpleados.InputCorreoElectrónico(row8);
-        //        PaginaEmpleados.InputTelefonoDeCasa(row9);
-        //        PaginaEmpleados.InputTelefonoDeOficina(row10);
-        //        PaginaEmpleados.InputNúmeroDeTelefonoMoviL(row11);
-        //        PaginaEmpleados.InputPuestolaboral(row12);
-        //        PaginaEmpleados.BoxDesplegablePermisos(row13);
-        //        PaginaEmpleados.BoxDesplegableCalendario(row14);
-        //        IWebElement inputFechaAlta = Driver.FindElement(By.Id("inputFechaAlta"));
-        //        if (string.IsNullOrEmpty(row15) || row15 == "Vacio")
-        //        {
-        //            inputFechaAlta.Clear(); // Limpiar el campo de fecha
-        //        }
-        //        else
-        //        {
-        //            inputFechaAlta.SendKeys(row15); // Añadir el nuevo valor al campo de fecha
-        //        }
+            // Iterar sobre los datos y ejecutar la prueba para cada conjunto de datos
+            foreach (var datos in datosExcel)
+            {
+                string row1 = (string)datos[0];
+                string row2 = (string)datos[1];
+                string row3 = (string)datos[2];
+                string row4 = (string)datos[3];
+                string row5 = (string)datos[4];
+                string row6 = (string)datos[5];
+                string row7 = (string)datos[6];
+                string row8 = (string)datos[7];
+                string row9 = (string)datos[8];
+                string row10 = (string)datos[9];
+                string row11 = (string)datos[10];
+                string row12 = (string)datos[11];
+                string row13 = (string)datos[12];
+                string row14 = (string)datos[13];
+                string row15 = (string)datos[14];
+                string row16 = (string)datos[15];
+                string row17 = (string)datos[16];
+                string row18 = (string)datos[17];
 
-        //        Thread.Sleep(10000);
-        //        PaginaEmpleados.InputFechaBaja(row16);
-        //        PaginaEmpleados.InputMensajeEspecial(row17);
-        //        PaginaEmpleados.BoxDesplegableZonaHoraria(row18);
+                // Ejecutar la prueba con los datos obtenidos del Excel
+                PaginaEmpleados.InputNumEmpleado(row1);
+                PaginaEmpleados.InputIdentificadorNomina(row2);
+                PaginaEmpleados.InputNombre(row3);
+                PaginaEmpleados.InputPrimerApellido(row4);
+                PaginaEmpleados.InputSegundoApellido(row5);
+                PaginaEmpleados.InputNombreCorto(row6);
+                PaginaEmpleados.InputDocumentoDeIdentidad(row7);
+                PaginaEmpleados.InputCorreoElectrónico(row8);
+                PaginaEmpleados.InputTelefonoDeCasa(row9);
+                PaginaEmpleados.InputTelefonoDeOficina(row10);
+                PaginaEmpleados.InputNúmeroDeTelefonoMoviL(row11);
+                PaginaEmpleados.InputPuestolaboral(row12);
+                PaginaEmpleados.BoxDesplegablePermisos(row13);
+                PaginaEmpleados.BoxDesplegableCalendario(row14);
+                PaginaEmpleados.InputFechaAlta(row15);
+                PaginaEmpleados.InputFechaBaja(row16);
+                PaginaEmpleados.InputMensajeEspecial(row17);
+                // Localizar el campo de entrada por XPath
+                IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentIdTimeZone\"]/input"));
+                // Limpiar el contenido del campo de entrada
+                campoInput.Clear();
+                //Ingresar datos en input zona horaria
+                campoInput.SendKeys("(UTC-06:0adalajara, Mexico City, Monterrey");
 
-        //        Thread.Sleep(100);
+                Thread.Sleep(100);
 
-        //        // Ejecutar JavaScript para ir al principio del scroll
-        //        IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
-        //        js.ExecuteScript("window.scrollTo(0, 0)");
+                // Ejecutar JavaScript para ir al principio del scroll
+                IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+                js.ExecuteScript("window.scrollTo(0, 0)");
 
-        //        // Localizar el botón "Guardar"
-        //        IWebElement botonGuardar = Driver.FindElement(By.CssSelector("#save > img"));
+                // Localizar el botón "Guardar"
+                IWebElement botonGuardar = Driver.FindElement(By.CssSelector("#save > img"));
 
-        //        Actions actions = new Actions(Driver);
+                // Desplazarse hasta el botón "Guardar"
+                actions.MoveToElement(botonGuardar);
+                actions.Perform();
 
-        //        // Desplazarse hasta el botón "Guardar"
-        //        actions.MoveToElement(botonGuardar);
-        //        actions.Perform();
+                // Hacer clic en el botón "Guardar"
+                botonGuardar.Click();
 
-        //        // Hacer clic en el botón "Guardar"
-        //        botonGuardar.Click();
-
-        //        ValidaciónAlerts.ValidacionAlert("Es necesario que indique una fecha de Alta.");
-        //    }
-        //}
+                ValidaciónAlerts.ValidacionAlert("Es necesario que indique una fecha de Alta.");
+            }
+        }
 
         //TearDown: Anotación de Nunit para ejecutar un método después de cada test
         //Método para cerrar navegador y liberar los recursos asociados con el controlador

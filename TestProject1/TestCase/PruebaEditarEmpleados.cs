@@ -166,9 +166,14 @@ namespace TestCompact.TestCase
 
             Actions actions = new Actions(Driver);
 
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+
             //---Validacion alert nombre---
             //Ingresar datos en input nombre
             PaginaEmpleados.InputNombre("Vacio");
+            Thread.Sleep(100);
+            // Ejecutar JavaScript para ir al principio del scroll
+            js.ExecuteScript("window.scrollTo(0, 0)");
             // Desplazarse hasta el botón "Guardar"
             actions.MoveToElement(botonGuardar);
             actions.Perform();
@@ -182,6 +187,9 @@ namespace TestCompact.TestCase
             PaginaEmpleados.InputNombre("Prueba");
             //Ingresar datos en input primer apellido
             PaginaEmpleados.InputPrimerApellido("");
+            Thread.Sleep(100);
+            // Ejecutar JavaScript para ir al principio del scroll
+            js.ExecuteScript("window.scrollTo(0, 0)");
             // Desplazarse hasta el botón "Guardar"
             actions.MoveToElement(botonGuardar);
             actions.Perform();
@@ -195,6 +203,9 @@ namespace TestCompact.TestCase
             PaginaEmpleados.InputPrimerApellido("Prueba1");
             //Ingresar datos en input socumento de identidad
             PaginaEmpleados.InputDocumentoDeIdentidad("");
+            Thread.Sleep(100);
+            // Ejecutar JavaScript para ir al principio del scroll
+            js.ExecuteScript("window.scrollTo(0, 0)");
             // Desplazarse hasta el botón "Guardar"
             actions.MoveToElement(botonGuardar);
             actions.Perform();
@@ -208,6 +219,9 @@ namespace TestCompact.TestCase
             PaginaEmpleados.InputDocumentoDeIdentidad("0283455A");
             //Ingresar datos en input identificador nomina
             PaginaEmpleados.InputIdentificadorNomina("");
+            Thread.Sleep(100);
+            // Ejecutar JavaScript para ir al principio del scroll
+            js.ExecuteScript("window.scrollTo(0, 0)");
             // Desplazarse hasta el botón "Guardar"
             actions.MoveToElement(botonGuardar);
             actions.Perform();
@@ -221,6 +235,9 @@ namespace TestCompact.TestCase
             PaginaEmpleados.InputIdentificadorNomina("7777777");
             //Ingresar datos en input permisos
             PaginaEmpleados.BoxDesplegablePermisos("-- Seleccione una opción --");
+            Thread.Sleep(100);
+            // Ejecutar JavaScript para ir al principio del scroll
+            js.ExecuteScript("window.scrollTo(0, 0)");
             // Desplazarse hasta el botón "Guardar"
             actions.MoveToElement(botonGuardar);
             actions.Perform();
@@ -234,6 +251,9 @@ namespace TestCompact.TestCase
             PaginaEmpleados.BoxDesplegablePermisos("001 - Asistencia R26");
             //Ingresar datos en input calendario
             PaginaEmpleados.BoxDesplegableCalendario("-- Seleccione una opción --");
+            Thread.Sleep(100);
+            // Ejecutar JavaScript para ir al principio del scroll
+            js.ExecuteScript("window.scrollTo(0, 0)");
             // Desplazarse hasta el botón "Guardar"
             actions.MoveToElement(botonGuardar);
             actions.Perform();
@@ -251,6 +271,9 @@ namespace TestCompact.TestCase
             campoInput.Clear();
             //Ingresar datos en input zona horaria
             campoInput.SendKeys("-- Seleccione una opción --");
+            Thread.Sleep(100);
+            // Ejecutar JavaScript para ir al principio del scroll
+            js.ExecuteScript("window.scrollTo(0, 0)");
             // Desplazarse hasta el botón "Guardar"
             actions.MoveToElement(botonGuardar);
             actions.Perform();
@@ -258,6 +281,24 @@ namespace TestCompact.TestCase
             botonGuardar.Click();
             //validar alert zona horaria
             ValidaciónAlerts.ValidacionAlert("La zona horaria es necesaria");
+
+            //---Validacion alert zona horaria---
+            // Limpiar el contenido del campo de entrada
+            campoInput.Clear();
+            //Ingresar datos en input zona horaria
+            campoInput.SendKeys("(UTC-06:0adalajara, Mexico City, Monterrey");
+            //Ingresar datos en input fecha alta
+            PaginaEmpleados.InputFechaAlta("");
+            Thread.Sleep(100);
+            // Ejecutar JavaScript para ir al principio del scroll
+            js.ExecuteScript("window.scrollTo(0, 0)");
+            // Desplazarse hasta el botón "Guardar"
+            actions.MoveToElement(botonGuardar);
+            actions.Perform();
+            // Hacer clic en el botón "Guardar"
+            botonGuardar.Click();
+            //validar alert fecha alta
+            ValidaciónAlerts.ValidacionAlert("Es necesario que indique una fecha de Alta.");
 
         }
 

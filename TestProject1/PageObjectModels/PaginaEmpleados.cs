@@ -383,7 +383,10 @@ namespace TestCompact.PageObjectModels
         {
             if (string.IsNullOrEmpty(dato) || dato == "Vacio")
             {
-                Driver.FindElement(inputFechaAlta).Clear();
+                // Simular el envío de la tecla "DEL" para borrar los datos del campo de entrada
+                Actions actions = new Actions(Driver);
+                actions.SendKeys(Driver.FindElement(inputFechaAlta), Keys.Delete).Perform();
+                // Agregar nuevos datos al campo de entrada fecha alta
                 Driver.FindElement(inputFechaAlta).SendKeys("");
             }
             else
@@ -426,23 +429,33 @@ namespace TestCompact.PageObjectModels
                 // Verificar si el valor proporcionado está presente en las opciones del elemento select
                 bool valorValido = false;
 
-                // Encontrar el elemento select por su ID
-                IWebElement selectElement = Driver.FindElement(By.Id("IdTimeZone_jqxComboBox"));
+                //// Encontrar el elemento select por su ID
+                //IWebElement selectElement = Driver.FindElement(By.Id("IdTimeZone_jqxComboBox"));
 
-                // Obtener todos los elementos option dentro del select
+                //Thread.Sleep(TimeSpan.FromSeconds(1));
+                //// Obtener todos los elementos option dentro del select
+                //IReadOnlyCollection<IWebElement> options = selectElement.FindElements(By.TagName("option"));
+
+                IWebElement selectElement = Driver.FindElement(By.Id("IdTimeZone_jqxComboBox"));
                 IReadOnlyCollection<IWebElement> options = selectElement.FindElements(By.TagName("option"));
 
-
-                // Iterar sobre los elementos option y obtener sus valores
                 foreach (IWebElement option in options)
                 {
-                    string valor = option.GetAttribute("value");
-                    if (valor.Equals(dato))
-                    {
-                        valorValido = true;
-                        break;
-                    }
+                    string optionText = option.Text;
+                    Console.WriteLine(optionText);
                 }
+
+                //// Iterar sobre los elementos option y obtener sus valores
+                //foreach (IWebElement option in options)
+                //{
+                //    string valor = option.Text;
+                //    Console.WriteLine(valor);
+                //    if (valor.Equals(dato))
+                //    {
+                //        valorValido = true;
+                //        break;
+                //    }
+                //}
 
                 if (valorValido)
                 {
