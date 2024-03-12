@@ -1,13 +1,10 @@
-﻿using NUnit.Framework.Interfaces;
-using OfficeOpenXml;
+﻿using OfficeOpenXml;
 using OpenQA.Selenium;
 using TestCompact.PageObjectModels;
+using TestCompact.Utilities;
 
 namespace TestCompact.TestCase
 {
-
-
-
     //Clase que contiene los casos de pruebas de Login
 
     [TestFixture]   //Anotación de Nunit para marcar una clase que contenga casos de prueba
@@ -105,21 +102,8 @@ namespace TestCompact.TestCase
         [TearDown]
         public void AfterTest()
         {
-            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
-            {
-                string testName = TestContext.CurrentContext.Test.FullName;
-                string? errorMessage = TestContext.CurrentContext.Result.Message;
-
-                string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\errorLogin_log.txt"; // Ruta del archivo de logs
-
-                // Escribir el nombre del test y el mensaje de error en un archivo de texto
-                using (StreamWriter writer = File.AppendText(filePath))
-                {
-                    writer.WriteLine($"Hora del error:{ DateTime.Now}");
-                    writer.WriteLine("Empieza nueva alinea");
-                    writer.WriteLine($"Test: {testName}, Error: {errorMessage}");
-                }
-            }
+            ResultadosTest ResultadosTest = new ResultadosTest();
+            ResultadosTest.LogsResultado();
 
             // Liberar los recursos asociados con el driver
             Driver.Quit();

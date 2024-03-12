@@ -1,7 +1,9 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TestCompact.PageObjectModels
 {
@@ -146,16 +148,17 @@ namespace TestCompact.PageObjectModels
             // Hacer clic en el botón "Personas"
             boton.Click();
         }
-        
+
         //Método para buscar persona
         public void InputBuscarPersona(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 Driver.FindElement(inputBuscarPersona).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputBuscarPersona).SendKeys("");
                 Driver.FindElement(inputBuscarPersona).SendKeys(dato);
             }
         }
@@ -164,12 +167,13 @@ namespace TestCompact.PageObjectModels
         //Método para escribir el número de empleado
         public void InputNumEmpleado(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 Driver.FindElement(inputNumEmpleado).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputNumEmpleado).SendKeys("");
                 Driver.FindElement(inputNumEmpleado).SendKeys(dato);
             }
         }
@@ -177,13 +181,14 @@ namespace TestCompact.PageObjectModels
         //Método para escribir el identificador de nómina
         public void InputIdentificadorNomina(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 Driver.FindElement(inputIdentificadorNómina).Clear();
                 Driver.FindElement(inputIdentificadorNómina).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputIdentificadorNómina).Clear();
                 Driver.FindElement(inputIdentificadorNómina).SendKeys(dato);
             }
         }
@@ -191,13 +196,14 @@ namespace TestCompact.PageObjectModels
         //Método para escribir nombre
         public void InputNombre(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
-                Driver.FindElement(inputNombre).Clear();    
+                Driver.FindElement(inputNombre).Clear();
                 Driver.FindElement(inputNombre).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputNombre).Clear();
                 Driver.FindElement(inputNombre).SendKeys(dato);
             }
         }
@@ -205,13 +211,14 @@ namespace TestCompact.PageObjectModels
         //Método para escribir primer apellido
         public void InputPrimerApellido(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 Driver.FindElement(inputPrimerApellido).Clear();
                 Driver.FindElement(inputPrimerApellido).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputPrimerApellido).Clear();
                 Driver.FindElement(inputPrimerApellido).SendKeys(dato);
             }
         }
@@ -219,12 +226,13 @@ namespace TestCompact.PageObjectModels
         //Método para escribir segundo apellido
         public void InputSegundoApellido(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 Driver.FindElement(inputSegundoApellido).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputSegundoApellido).SendKeys("");
                 Driver.FindElement(inputSegundoApellido).SendKeys(dato);
             }
         }
@@ -232,12 +240,13 @@ namespace TestCompact.PageObjectModels
         // Método para escribir nombre corto
         public void InputNombreCorto(string? dato)
         {
-            if (string.IsNullOrEmpty(dato)||dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 Driver.FindElement(inputNombreCorto).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputNombreCorto).SendKeys("");
                 Driver.FindElement(inputNombreCorto).SendKeys(dato);
             }
         }
@@ -245,13 +254,14 @@ namespace TestCompact.PageObjectModels
         //Método para escribir documento de identidad
         public void InputDocumentoDeIdentidad(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 Driver.FindElement(inputDocumentoDeIdentidad).Clear();
                 Driver.FindElement(inputDocumentoDeIdentidad).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputDocumentoDeIdentidad).Clear();
                 Driver.FindElement(inputDocumentoDeIdentidad).SendKeys(dato);
             }
         }
@@ -259,12 +269,13 @@ namespace TestCompact.PageObjectModels
         //Método para escribir correo electrónico
         public void InputCorreoElectrónico(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 Driver.FindElement(inputCorreoElectrónico).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputCorreoElectrónico).SendKeys("");
                 Driver.FindElement(inputCorreoElectrónico).SendKeys(dato);
             }
         }
@@ -272,12 +283,13 @@ namespace TestCompact.PageObjectModels
         //Método para escribir telefono de casa
         public void InputTelefonoDeCasa(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 Driver.FindElement(inputTeléfonoDeCasa).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputTeléfonoDeCasa).SendKeys("");
                 Driver.FindElement(inputTeléfonoDeCasa).SendKeys(dato);
             }
         }
@@ -285,12 +297,13 @@ namespace TestCompact.PageObjectModels
         //Método para escribir telefono de oficina
         public void InputTelefonoDeOficina(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 Driver.FindElement(inputTeléfonoDeOficina).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputTeléfonoDeOficina).SendKeys("");
                 Driver.FindElement(inputTeléfonoDeOficina).SendKeys(dato);
             }
         }
@@ -298,12 +311,13 @@ namespace TestCompact.PageObjectModels
         //Método para escribir telefono movil
         public void InputNúmeroDeTelefonoMoviL(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 Driver.FindElement(inputNúmeroDeTeléfonoMóviL).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputNúmeroDeTeléfonoMóviL).SendKeys("");
                 Driver.FindElement(inputNúmeroDeTeléfonoMóviL).SendKeys(dato);
             }
         }
@@ -311,12 +325,13 @@ namespace TestCompact.PageObjectModels
         //Método para escribir puesto laboral
         public void InputPuestolaboral(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 Driver.FindElement(inputPuestolaboral).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputPuestolaboral).SendKeys("");
                 Driver.FindElement(inputPuestolaboral).SendKeys(dato);
             }
         }
@@ -331,24 +346,26 @@ namespace TestCompact.PageObjectModels
 
             Thread.Sleep(100);
 
-            // Configurar una pausa implícita de 10 segundos
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-
             IWebElement boxDesplegable = Driver.FindElement(By.CssSelector("#listBoxContentinnerListBoxcbPerfiles > div"));
-            
-            Actions actions = new Actions(Driver);
 
-            // Desplazarse hasta el contenedor
-            actions.MoveToElement(boxDesplegable);
-            actions.Perform();
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(100));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id=\"listitem0innerListBoxcbPerfiles\"]/span")));
 
             IReadOnlyCollection<IWebElement> dropdownOptions = boxDesplegable.FindElements(By.TagName("span"));
+            bool datoEncontrado = false;
             foreach (IWebElement dropdownOption in dropdownOptions)
             {
                 if (dropdownOption.Text.Equals(textoSeleccionado))
                 {
                     dropdownOption.Click();
+                    datoEncontrado = true;
+                    break;
                 }
+            }
+            // Si el dato no fue encontrado, lanzar una excepción
+            if (!datoEncontrado)
+            {
+                throw new ArgumentException($"El valor proporcionado: '{textoSeleccionado}', no está presente en las opciones de permisos de acceso.");
             }
         }
         //Método para calendario
@@ -361,27 +378,29 @@ namespace TestCompact.PageObjectModels
             Thread.Sleep(TimeSpan.FromSeconds(1));
 
             IWebElement boxDesplegableCalendario = Driver.FindElement(By.CssSelector("#listBoxContentinnerListBoxcbCalendario > div"));
-            
-            Actions actions = new Actions(Driver);
-
-            // Desplazarse hasta el contenedor
-            actions.MoveToElement(boxDesplegableCalendario);
-            actions.Perform();
 
             IReadOnlyCollection<IWebElement> dropdownOptionsCalendarios = boxDesplegableCalendario.FindElements(By.TagName("span"));
+            bool datoEncontrado = false;
             foreach (IWebElement dropdownOptionsCalendario in dropdownOptionsCalendarios)
             {
                 if (dropdownOptionsCalendario.Text.Equals(textoSeleccionado))
                 {
                     dropdownOptionsCalendario.Click();
+                    datoEncontrado = true;
+                    break;
                 }
+            }
+            // Si el dato no fue encontrado, lanzar una excepción
+            if (!datoEncontrado)
+            {
+                throw new ArgumentException($"El valor proporcionado: '{textoSeleccionado}', no está presente en las opciones de calendario.");
             }
         }
 
         //Método para escribir fecha alta
         public void InputFechaAlta(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 // Simular el envío de la tecla "DEL" para borrar los datos del campo de entrada
                 Actions actions = new Actions(Driver);
@@ -389,8 +408,13 @@ namespace TestCompact.PageObjectModels
                 // Agregar nuevos datos al campo de entrada fecha alta
                 Driver.FindElement(inputFechaAlta).SendKeys("");
             }
-            else
+            else if (dato != "[Fecha de hoy]")
             {
+                // Simular el envío de la tecla "DEL" para borrar los datos del campo de entrada
+                Actions actions = new Actions(Driver);
+                actions.SendKeys(Driver.FindElement(inputFechaAlta), Keys.Delete).Perform();
+                // Agregar nuevos datos al campo de entrada fecha alta
+                Driver.FindElement(inputFechaAlta).SendKeys("");
                 Driver.FindElement(inputFechaAlta).SendKeys(dato);
             }
         }
@@ -398,25 +422,21 @@ namespace TestCompact.PageObjectModels
         //Método para escribir fecha baja
         public void InputFechaBaja(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+             if (!string.IsNullOrEmpty(dato) && dato != "Vacío")
             {
-                Driver.FindElement(inputFechaBaja).SendKeys("");
-            }
-            else
-            {
-                Driver.FindElement(inputFechaBaja).SendKeys(dato);
+                // Si el dato no es nulo ni igual a "Vacio", enviar el dato al campo de entrada
+                Driver.FindElement(inputMensajeEspecial).Clear();
+                Driver.FindElement(inputMensajeEspecial).SendKeys(dato);
             }
         }
 
         //Método para escribir mensaje especial
         public void InputMensajeEspecial(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (!string.IsNullOrEmpty(dato) && dato != "Vacío")
             {
-                Driver.FindElement(inputMensajeEspecial).SendKeys("");
-            }
-            else
-            {
+                // Si el dato no es nulo ni igual a "Vacio", enviar el dato al campo de entrada
+                Driver.FindElement(inputMensajeEspecial).Clear();
                 Driver.FindElement(inputMensajeEspecial).SendKeys(dato);
             }
         }
@@ -424,54 +444,29 @@ namespace TestCompact.PageObjectModels
         //Método para zona horaria
         public void BoxDesplegableZonaHoraria(string? dato)
         {
-            if (!string.IsNullOrEmpty(dato) || dato == "Vacío")
+            //Input zona horaria
+            IWebElement btnDesplegableZonaHoraria = Driver.FindElement(By.Id("dropdownlistArrowIdTimeZone"));
+            btnDesplegableZonaHoraria.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+
+            IWebElement boxDesplegableZonaHoraria = Driver.FindElement(By.XPath("/html/body/div[13]/div/div/div/div[2]/div"));
+
+            IReadOnlyCollection<IWebElement> dropdownOptionsZonaHorarias = boxDesplegableZonaHoraria.FindElements(By.TagName("span"));
+            bool datoEncontrado = false;
+            foreach (IWebElement dropdownOptionsZonaHoraria in dropdownOptionsZonaHorarias)
             {
-                // Verificar si el valor proporcionado está presente en las opciones del elemento select
-                bool valorValido = false;
-
-                //// Encontrar el elemento select por su ID
-                //IWebElement selectElement = Driver.FindElement(By.Id("IdTimeZone_jqxComboBox"));
-
-                //Thread.Sleep(TimeSpan.FromSeconds(1));
-                //// Obtener todos los elementos option dentro del select
-                //IReadOnlyCollection<IWebElement> options = selectElement.FindElements(By.TagName("option"));
-
-                IWebElement selectElement = Driver.FindElement(By.Id("IdTimeZone_jqxComboBox"));
-                IReadOnlyCollection<IWebElement> options = selectElement.FindElements(By.TagName("option"));
-
-                foreach (IWebElement option in options)
+                if (dropdownOptionsZonaHoraria.Text.Equals(dato))
                 {
-                    string optionText = option.Text;
-                    Console.WriteLine(optionText);
+                    dropdownOptionsZonaHoraria.Click();
+                    datoEncontrado = true;
+                    break;
                 }
-
-                //// Iterar sobre los elementos option y obtener sus valores
-                //foreach (IWebElement option in options)
-                //{
-                //    string valor = option.Text;
-                //    Console.WriteLine(valor);
-                //    if (valor.Equals(dato))
-                //    {
-                //        valorValido = true;
-                //        break;
-                //    }
-                //}
-
-                if (valorValido)
-                {
-                    // Localizar el campo de entrada por XPath
-                    IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentIdTimeZone\"]/input"));
-
-                    // Limpiar el contenido del campo de entrada
-                    campoInput.Clear();
-
-                    // Ingresar el nuevo dato en el campo de entrada
-                    campoInput.SendKeys(dato ?? "");
-                }
-                else
-                {
-                    throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de zona horaria.");
-                }
+            }
+            // Si el dato no fue encontrado, lanzar una excepción
+            if (!datoEncontrado)
+            {
+                throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de zona horaria.");
             }
         }
 
@@ -479,88 +474,58 @@ namespace TestCompact.PageObjectModels
         //Método para empresa
         public void BoxDesplegableEmpresa(string dato)
         {
-            if (!string.IsNullOrEmpty(dato) || dato == "Vacío")
+            //Input empresa
+            IWebElement btnDesplegableEmpresa = Driver.FindElement(By.Id("dropdownlistArrowEmpresa"));
+            btnDesplegableEmpresa.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+
+            IWebElement boxDesplegableEmpresa = Driver.FindElement(By.XPath("/html/body/div[12]/div/div/div/div[2]/div"));
+
+            IReadOnlyCollection<IWebElement> dropdownOptionsEmpresas = boxDesplegableEmpresa.FindElements(By.TagName("span"));
+            bool datoEncontrado = false;
+            foreach (IWebElement option in dropdownOptionsEmpresas)
             {
-                // Verificar si el valor proporcionado está presente en las opciones del elemento select
-                bool valorValido = false;
-
-                // Encontrar el elemento select por su ID
-                IWebElement selectElement = Driver.FindElement(By.Id("Empresa_jqxComboBox"));
-
-                // Obtener todos los elementos option dentro del select
-                IReadOnlyCollection<IWebElement> options = selectElement.FindElements(By.TagName("option"));
-
-
-                // Iterar sobre los elementos option y obtener sus valores
-                foreach (IWebElement option in options)
+                if (option.Text.Equals(dato))
                 {
-                    string valor = option.GetAttribute("value");
-                    if (valor.Equals(dato))
-                    {
-                        valorValido = true;
-                        break;
-                    }
+                    option.Click();
+                    datoEncontrado = true;
+                    break;
                 }
-
-                if (valorValido)
-                {
-                    // Localizar el campo de entrada por XPath
-                    IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentEmpresa\"]/input"));
-
-                    // Limpiar el contenido del campo de entrada
-                    campoInput.Clear();
-
-                    // Ingresar el nuevo dato en el campo de entrada
-                    campoInput.SendKeys(dato);
-                }
-                else
-                {
-                    throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de empresa.");
-                }
+            }
+            // Si el dato no fue encontrado, lanzar una excepción
+            if (!datoEncontrado)
+            {
+                throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de empresa.");
             }
         }
 
         //Método para centro de trabajo
         public void BoxDesplegableCentroTrabajo(string dato)
         {
-            if (!string.IsNullOrEmpty(dato) || dato == "Vacío")
+            //Input centro de trabajo
+            IWebElement btnDesplegableCentroTrabajo = Driver.FindElement(By.Id("dropdownlistArrowCentroTrabajo"));
+            btnDesplegableCentroTrabajo.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+
+            IWebElement boxDesplegableCentroTrabajo = Driver.FindElement(By.XPath("/html/body/div[11]/div/div/div/div[2]/div"));
+
+            IReadOnlyCollection<IWebElement> dropdownOptionsCentroTrabajos = boxDesplegableCentroTrabajo.FindElements(By.TagName("span"));
+            bool datoEncontrado = false;
+            foreach (IWebElement option in dropdownOptionsCentroTrabajos)
             {
-                // Verificar si el valor proporcionado está presente en las opciones del elemento select
-                bool valorValido = false;
-
-                // Encontrar el elemento select por su ID
-                IWebElement selectElement = Driver.FindElement(By.Id("CentroTrabajo_jqxComboBox"));
-
-                // Obtener todos los elementos option dentro del select
-                IReadOnlyCollection<IWebElement> options = selectElement.FindElements(By.TagName("option"));
-
-
-                // Iterar sobre los elementos option y obtener sus valores
-                foreach (IWebElement option in options)
+                if (option.Text.Equals(dato))
                 {
-                    string valor = option.GetAttribute("value");
-                    if (valor.Equals(dato))
-                    {
-                        valorValido = true;
-                        break;
-                    }
+                    option.Click();
+                    datoEncontrado = true;
+                    break;
                 }
-
-                if (valorValido)
-                {
-                    // Localizar el campo de entrada por XPath
-                    IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentCentroTrabajo\"]/input"));
-
-                    // Limpiar el contenido del campo de entrada
-                    campoInput.Clear();
-
-                    // Ingresar el nuevo dato en el campo de entrada
-                    campoInput.SendKeys(dato);
-                }
-                else
-                {
-                    throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de centro de trabajo.");
-                }
+            }
+            // Si el dato no fue encontrado, lanzar una excepción
+            if (!datoEncontrado)
+            {
+                throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de centro de trabajo.");
             }
         }
 
@@ -568,100 +533,71 @@ namespace TestCompact.PageObjectModels
         //Método para seccion
         public void BoxDesplegableSeccion(string dato)
         {
-            if (!string.IsNullOrEmpty(dato) || dato == "Vacío")
+            //Input seccion
+            IWebElement btnDesplegableSeccion = Driver.FindElement(By.Id("dropdownlistArrowSeccion"));
+            btnDesplegableSeccion.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+
+            IWebElement boxDesplegableSeccion = Driver.FindElement(By.XPath("/html/body/div[10]/div/div/div/div[2]/div"));
+
+            IReadOnlyCollection<IWebElement> dropdownOptionsSeccions = boxDesplegableSeccion.FindElements(By.TagName("span"));
+            bool datoEncontrado = false;
+            foreach (IWebElement option in dropdownOptionsSeccions)
             {
-                // Verificar si el valor proporcionado está presente en las opciones del elemento select
-                bool valorValido = false;
-
-                // Encontrar el elemento select por su ID
-                IWebElement selectElement = Driver.FindElement(By.Id("Seccion_jqxComboBox"));
-
-                // Obtener todos los elementos option dentro del select
-                IReadOnlyCollection<IWebElement> options = selectElement.FindElements(By.TagName("option"));
-
-
-                // Iterar sobre los elementos option y obtener sus valores
-                foreach (IWebElement option in options)
+                if (option.Text.Equals(dato))
                 {
-                    string valor = option.GetAttribute("value");
-                    if (valor.Equals(dato))
-                    {
-                        valorValido = true;
-                        break;
-                    }
+                    option.Click();
+                    datoEncontrado = true;
+                    break;
                 }
-
-                if (valorValido)
-                {
-                    // Localizar el campo de entrada por XPath
-                    IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentSeccion\"]/input"));
-
-                    // Limpiar el contenido del campo de entrada
-                    campoInput.Clear();
-
-                    // Ingresar el nuevo dato en el campo de entrada
-                    campoInput.SendKeys(dato);
-                }
-                else
-                {
-                    throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de seccion.");
-                }
+            }
+            // Si el dato no fue encontrado, lanzar una excepción
+            if (!datoEncontrado)
+            {
+                throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de seccion.");
             }
         }
 
         //Método para departamento
         public void BoxDesplegableDepartamento(string dato)
         {
-            if (!string.IsNullOrEmpty(dato) || dato == "Vacío")
+            //Input departamento
+            IWebElement btnDesplegable = Driver.FindElement(By.Id("dropdownlistArrowDepartamento"));
+            btnDesplegable.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+
+            IWebElement boxDesplegable = Driver.FindElement(By.XPath("/html/body/div[9]/div/div/div/div[2]/div"));
+
+            IReadOnlyCollection<IWebElement> dropdownOptions = boxDesplegable.FindElements(By.TagName("span"));
+            bool datoEncontrado = false;
+            foreach (IWebElement option in dropdownOptions)
             {
-                // Verificar si el valor proporcionado está presente en las opciones del elemento select
-                bool valorValido = false;
-
-                // Encontrar el elemento select por su ID
-                IWebElement selectElement = Driver.FindElement(By.Id("Departamento_jqxComboBox"));
-
-                // Obtener todos los elementos option dentro del select
-                IReadOnlyCollection<IWebElement> options = selectElement.FindElements(By.TagName("option"));
-
-
-                // Iterar sobre los elementos option y obtener sus valores
-                foreach (IWebElement option in options)
+                if (option.Text.Equals(dato))
                 {
-                    string valor = option.GetAttribute("value");
-                    if (valor.Equals(dato))
-                    {
-                        valorValido = true;
-                        break;
-                    }
+                    option.Click();
+                    datoEncontrado = true;
+                    break;
                 }
-
-                if (valorValido)
-                {
-                    // Localizar el campo de entrada por XPath
-                    IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentDepartamento\"]/input"));
-
-                    // Limpiar el contenido del campo de entrada
-                    campoInput.Clear();
-
-                    // Ingresar el nuevo dato en el campo de entrada
-                    campoInput.SendKeys(dato);
-                }
-                else
-                {
-                    throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de departamento.");
-                }
+            }
+            // Si el dato no fue encontrado, lanzar una excepción
+            if (!datoEncontrado)
+            {
+                throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de departamento.");
             }
         }
 
         //Método para escribir vacaciones anuales (días)
         public void InputVacacionesAnuales(string? dato)
         {
-            if (string.IsNullOrEmpty(dato) || dato == "Vacio")
+            if (string.IsNullOrEmpty(dato) || dato == "Vacío")
             {
                 Driver.FindElement(inputVacacionesAnuales).SendKeys("");
             }
             else
             {
+                Driver.FindElement(inputVacacionesAnuales).Clear();
                 Driver.FindElement(inputVacacionesAnuales).SendKeys(dato);
             }
         }
@@ -669,45 +605,70 @@ namespace TestCompact.PageObjectModels
         //Método para pertenece a protección civil
         public void BoxDesplegableProteccionCivil(string dato)
         {
-            if (!string.IsNullOrEmpty(dato) || dato == "Vacío")
+            //Input protección civil
+            IWebElement btnDesplegable = Driver.FindElement(By.Id("dropdownlistArrowProteccionCivil"));
+            btnDesplegable.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+
+            IWebElement boxDesplegable = Driver.FindElement(By.XPath("/html/body/div[8]/div/div/div/div[2]/div"));
+
+            IReadOnlyCollection<IWebElement> dropdownOptions = boxDesplegable.FindElements(By.TagName("span"));
+            bool datoEncontrado = false;
+            foreach (IWebElement option in dropdownOptions)
             {
-                // Verificar si el valor proporcionado está presente en las opciones del elemento select
-                bool valorValido = false;
-
-                // Encontrar el elemento select por su ID
-                IWebElement selectElement = Driver.FindElement(By.Id("ProteccionCivil_jqxComboBox"));
-
-                // Obtener todos los elementos option dentro del select
-                IReadOnlyCollection<IWebElement> options = selectElement.FindElements(By.TagName("option"));
-
-                // Iterar sobre los elementos option y obtener sus valores
-                foreach (IWebElement option in options)
+                if (option.Text.Equals(dato))
                 {
-                    string valor = option.GetAttribute("value");
-                    if (valor.Equals(dato))
-                    {
-                        valorValido = true;
-                        break;
-                    }
-                }
-
-                if (valorValido)
-                {
-                    // Localizar el campo de entrada por XPath
-                    IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentProteccionCivil\"]/input"));
-
-                    // Limpiar el contenido del campo de entrada
-                    campoInput.Clear();
-
-                    // Ingresar el nuevo dato en el campo de entrada
-                    campoInput.SendKeys(dato);
-                }
-                else
-                {
-                    throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de pertenece a protección civil.");
+                    option.Click();
+                    datoEncontrado = true;
+                    break;
                 }
             }
-        }        
+            // Si el dato no fue encontrado, lanzar una excepción
+            if (!datoEncontrado)
+            {
+                throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de protección civil.");
+            }
+            //    if (!string.IsNullOrEmpty(dato) || dato == "Vacío")
+            //    {
+            //        // Verificar si el valor proporcionado está presente en las opciones del elemento select
+            //        bool valorValido = false;
+
+            //        // Encontrar el elemento select por su ID
+            //        IWebElement selectElement = Driver.FindElement(By.Id("ProteccionCivil_jqxComboBox"));
+
+            //        // Obtener todos los elementos option dentro del select
+            //        IReadOnlyCollection<IWebElement> options = selectElement.FindElements(By.TagName("option"));
+
+            //        // Iterar sobre los elementos option y obtener sus valores
+            //        foreach (IWebElement option in options)
+            //        {
+            //            string valor = option.GetAttribute("value");
+            //            if (valor.Equals(dato))
+            //            {
+            //                valorValido = true;
+            //                break;
+            //            }
+            //        }
+
+            //        if (valorValido)
+            //        {
+            //            // Localizar el campo de entrada por XPath
+            //            IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentProteccionCivil\"]/input"));
+
+            //            // Limpiar el contenido del campo de entrada
+            //            campoInput.Clear();
+
+            //            // Ingresar el nuevo dato en el campo de entrada
+            //            campoInput.SendKeys(dato);
+            //        }
+            //        else
+            //        {
+            //            throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de pertenece a protección civil.");
+            //        }
+            //    }
+            //}
+        }
     }
 }
 

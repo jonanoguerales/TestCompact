@@ -1,9 +1,5 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OpenQA.Selenium.Support.UI;
 
 namespace TestCompact.Utilities
 {
@@ -17,9 +13,12 @@ namespace TestCompact.Utilities
         }
         public void ValidacionAlert(string expectedText)
         {
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+
             try
             {
-                IWebElement modal = Driver.FindElement(By.Id("modalContainer"));
+                // Esperar hasta que aparezca el modal
+                IWebElement modal = wait.Until(ExpectedConditions.ElementIsVisible(By.Id("modalContainer")));
 
                 // Verificar si el texto del modal contiene el texto esperado
                 IWebElement pElement = modal.FindElement(By.TagName("p"));

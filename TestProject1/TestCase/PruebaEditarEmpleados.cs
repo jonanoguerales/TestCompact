@@ -1,10 +1,7 @@
-﻿using OfficeOpenXml;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
 using TestCompact.PageObjectModels;
 using TestCompact.Utilities;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TestCompact.TestCase
 {
@@ -28,7 +25,7 @@ namespace TestCompact.TestCase
         {
             // Inicializar instancias
             Driver = Inicio.CreateWebDriver();
-            Inicio = new Inicio(Driver); // Aquí estoy asumiendo que el constructor de Inicio espera un IWebDriver
+            Inicio = new Inicio(Driver); 
 
             //Maximizar la ventana browser
             Driver.Manage().Window.FullScreen();
@@ -76,7 +73,12 @@ namespace TestCompact.TestCase
         public void Test_001_editar_persona()
         {
             // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\jona\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+
+            Actions actions = new Actions(Driver);
+
+            IWebElement inputDepartamento = Driver.FindElement(By.Id("Departamento"));
+            IWebElement inputRegistroHorario = Driver.FindElement(By.XPath("//*[@id=\"ultimoFichaje\"]"));
 
             //Datos para recorrer el Excel
             int inicioRow = 15;
@@ -128,12 +130,18 @@ namespace TestCompact.TestCase
                 PaginaEmpleados.InputTelefonoDeOficina(row10);
                 PaginaEmpleados.InputNúmeroDeTelefonoMoviL(row11);
                 PaginaEmpleados.InputPuestolaboral(row12);
+                // Desplazarse hasta el input departamento
+                actions.MoveToElement(inputDepartamento);
+                actions.Perform();
                 PaginaEmpleados.BoxDesplegablePermisos(row13);
                 PaginaEmpleados.BoxDesplegableCalendario(row14);
                 PaginaEmpleados.InputFechaAlta(row15);
-                PaginaEmpleados.InputFechaBaja(row16); 
+                PaginaEmpleados.InputFechaBaja(row16);
                 PaginaEmpleados.InputMensajeEspecial(row17);
                 PaginaEmpleados.BoxDesplegableZonaHoraria(row18);
+                // Desplazarse hasta el input departamento
+                actions.MoveToElement(inputRegistroHorario);
+                actions.Perform();
                 PaginaEmpleados.BoxDesplegableEmpresa(row22);
                 PaginaEmpleados.BoxDesplegableCentroTrabajo(row23);
                 PaginaEmpleados.BoxDesplegableSeccion(row24);
@@ -141,10 +149,12 @@ namespace TestCompact.TestCase
                 PaginaEmpleados.InputVacacionesAnuales(row26);
                 PaginaEmpleados.BoxDesplegableProteccionCivil(row27);
 
+                // Ejecutar JavaScript para ir al principio del scroll
+                IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+                js.ExecuteScript("window.scrollTo(0, 0)");
+
                 // Localizar el botón "Guardar"
                 IWebElement botonGuardar = Driver.FindElement(By.CssSelector("#save > img"));
-
-                Actions actions = new Actions(Driver);
 
                 // Desplazarse hasta el botón "Guardar"
                 actions.MoveToElement(botonGuardar);
@@ -166,11 +176,14 @@ namespace TestCompact.TestCase
 
             Actions actions = new Actions(Driver);
 
+            IWebElement inputDepartamento = Driver.FindElement(By.Id("Departamento"));
+            IWebElement inputRegistroHorario = Driver.FindElement(By.XPath("//*[@id=\"ultimoFichaje\"]"));
+
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
 
             //---Validacion alert nombre---
             //Ingresar datos en input nombre
-            PaginaEmpleados.InputNombre("Vacio");
+            PaginaEmpleados.InputNombre("");
             Thread.Sleep(100);
             // Ejecutar JavaScript para ir al principio del scroll
             js.ExecuteScript("window.scrollTo(0, 0)");
@@ -230,9 +243,15 @@ namespace TestCompact.TestCase
             //validar alert nomina
             ValidaciónAlerts.ValidacionAlert("El número del empleado es necesario");
 
+
+            // Desplazarse hasta el input departamento
+            actions.MoveToElement(inputDepartamento);
+            actions.Perform();
+
             //---Validacion alert permisos---
             //Ingresar datos en input identificador nomina
             PaginaEmpleados.InputIdentificadorNomina("7777777");
+            Thread.Sleep(100);
             //Ingresar datos en input permisos
             PaginaEmpleados.BoxDesplegablePermisos("-- Seleccione una opción --");
             Thread.Sleep(100);
@@ -245,6 +264,11 @@ namespace TestCompact.TestCase
             botonGuardar.Click();
             //validar alert permisos
             ValidaciónAlerts.ValidacionAlert("El perfil es necesario");
+
+
+            // Desplazarse hasta el input departamento
+            actions.MoveToElement(inputDepartamento);
+            actions.Perform();
 
             //---Validacion alert calendario---
             //Ingresar datos en input permisos
@@ -262,15 +286,16 @@ namespace TestCompact.TestCase
             //validar alert calendario
             ValidaciónAlerts.ValidacionAlert("El calendario es necesario");
 
+
+            // Desplazarse hasta el input departamento
+            actions.MoveToElement(inputDepartamento);
+            actions.Perform();
+
             //---Validacion alert zona horaria---
             //Ingresar datos en input calendario
             PaginaEmpleados.BoxDesplegableCalendario("2 - Calendario PYV México");
-            // Localizar el campo de entrada por XPath
-            IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentIdTimeZone\"]/input"));
-            // Limpiar el contenido del campo de entrada
-            campoInput.Clear();
             //Ingresar datos en input zona horaria
-            campoInput.SendKeys("-- Seleccione una opción --");
+            PaginaEmpleados.BoxDesplegableZonaHoraria("-- Seleccione una opción --");
             Thread.Sleep(100);
             // Ejecutar JavaScript para ir al principio del scroll
             js.ExecuteScript("window.scrollTo(0, 0)");
@@ -282,11 +307,13 @@ namespace TestCompact.TestCase
             //validar alert zona horaria
             ValidaciónAlerts.ValidacionAlert("La zona horaria es necesaria");
 
-            //---Validacion alert zona horaria---
-            // Limpiar el contenido del campo de entrada
-            campoInput.Clear();
-            //Ingresar datos en input zona horaria
-            campoInput.SendKeys("(UTC-06:0adalajara, Mexico City, Monterrey");
+            // Desplazarse hasta el input departamento
+            actions.MoveToElement(inputRegistroHorario);
+            actions.Perform();
+
+            //---Validacion alert fecha de Alta---
+            //Ingresar datos en input fecha de Alta
+            PaginaEmpleados.BoxDesplegableZonaHoraria("(UTC-10:00) Hawaii");
             //Ingresar datos en input fecha alta
             PaginaEmpleados.InputFechaAlta("");
             Thread.Sleep(100);
@@ -307,8 +334,8 @@ namespace TestCompact.TestCase
         [TearDown]
         public void AfterTest()
         {
-            LogsError logsError = new LogsError();
-            logsError.LogsErrors();
+            ResultadosTest ResultadosTest = new ResultadosTest();
+            ResultadosTest.LogsResultado();
 
             // Liberar los recursos asociados con el driver
             Driver.Quit();

@@ -1,5 +1,5 @@
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using TestCompact.Utilities;
 using TestCompact.PageObjectModels;
 
 namespace TestCompact.TestCase
@@ -76,6 +76,9 @@ namespace TestCompact.TestCase
         [TearDown]
         public void TearDown()
         {
+            ResultadosTest ResultadosTest = new ResultadosTest();
+            ResultadosTest.LogsResultado();
+
             // Liberar los recursos asociados con el Driver
             Driver.Quit();
             Driver.Dispose();

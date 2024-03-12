@@ -1,10 +1,7 @@
-﻿using OfficeOpenXml;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
 using TestCompact.PageObjectModels;
 using TestCompact.Utilities;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TestCompact.TestCase
 {
@@ -28,7 +25,7 @@ namespace TestCompact.TestCase
         {
             // Inicializar instancias
             Driver = Inicio.CreateWebDriver();
-            Inicio = new Inicio(Driver); // Aquí estoy asumiendo que el constructor de Inicio espera un IWebDriver
+            Inicio = new Inicio(Driver);
 
             //Maximizar la ventana browser
             Driver.Manage().Window.FullScreen();
@@ -75,7 +72,7 @@ namespace TestCompact.TestCase
         public void Test_001_verificación_el_nombre_es_necesario()
         {
             // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\jona\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
 
             //Datos para recorrer el Excel
             int inicioRow = 16;
@@ -125,7 +122,7 @@ namespace TestCompact.TestCase
         public void Test_002_verificación_el_primer_apellido_es_necesario()
         {
             // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\jona\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
 
             //Datos para recorrer el Excel
             int inicioRow = 6;
@@ -176,7 +173,7 @@ namespace TestCompact.TestCase
         public void Test_003_verificación_documento_de_identidad_es_necesario()
         {
             // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\jona\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
 
             //Datos para recorrer el Excel
             int inicioRow = 7;
@@ -234,7 +231,7 @@ namespace TestCompact.TestCase
         public void Test_004_verificación_el_numero_de_empleado_es_necesario()
         {
             // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\jona\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
 
             //Datos para recorrer el Excel
             int inicioRow = 8;
@@ -292,7 +289,11 @@ namespace TestCompact.TestCase
         public void Test_005_verificación_el_perfil_es_necesario()
         {
             // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\jona\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+
+            Actions actions = new Actions(Driver);
+
+            IWebElement inputDepartamento = Driver.FindElement(By.Id("Departamento"));
 
             //Datos para recorrer el Excel
             int inicioRow = 9;
@@ -333,6 +334,9 @@ namespace TestCompact.TestCase
                 PaginaEmpleados.InputTelefonoDeOficina(row10);
                 PaginaEmpleados.InputNúmeroDeTelefonoMoviL(row11);
                 PaginaEmpleados.InputPuestolaboral(row12);
+                // Desplazarse hasta el input departamento
+                actions.MoveToElement(inputDepartamento);
+                actions.Perform();
                 PaginaEmpleados.BoxDesplegablePermisos("-- Seleccione una opción --");
 
                 Thread.Sleep(100);
@@ -343,8 +347,6 @@ namespace TestCompact.TestCase
 
                 // Localizar el botón "Guardar"
                 IWebElement botonGuardar = Driver.FindElement(By.CssSelector("#save > img"));
-
-                Actions actions = new Actions(Driver);
 
                 // Desplazarse hasta el botón "Guardar"
                 actions.MoveToElement(botonGuardar);
@@ -362,7 +364,11 @@ namespace TestCompact.TestCase
         public void Test_006_verificación_el_calendario_es_necesario()
         {
             // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\jona\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+
+            Actions actions = new Actions(Driver);
+
+            IWebElement inputDepartamento = Driver.FindElement(By.Id("Departamento"));
 
             //Datos para recorrer el Excel
             int inicioRow = 10;
@@ -404,6 +410,9 @@ namespace TestCompact.TestCase
                 PaginaEmpleados.InputTelefonoDeOficina(row10);
                 PaginaEmpleados.InputNúmeroDeTelefonoMoviL(row11);
                 PaginaEmpleados.InputPuestolaboral(row12);
+                // Desplazarse hasta el input departamento
+                actions.MoveToElement(inputDepartamento);
+                actions.Perform();
                 PaginaEmpleados.BoxDesplegablePermisos(row13);
                 PaginaEmpleados.BoxDesplegableCalendario("-- Seleccione una opción --");
 
@@ -415,8 +424,6 @@ namespace TestCompact.TestCase
 
                 // Localizar el botón "Guardar"
                 IWebElement botonGuardar = Driver.FindElement(By.CssSelector("#save > img"));
-
-                Actions actions = new Actions(Driver);
 
                 // Desplazarse hasta el botón "Guardar"
                 actions.MoveToElement(botonGuardar);
@@ -434,7 +441,11 @@ namespace TestCompact.TestCase
         public void Test_007_verificación_la_zona_horaria_es_necesaria()
         {
             // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\jona\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+
+            Actions actions = new Actions(Driver);
+
+            IWebElement inputDepartamento = Driver.FindElement(By.Id("Departamento"));
 
             //Datos para recorrer el Excel
             int inicioRow = 11;
@@ -480,6 +491,9 @@ namespace TestCompact.TestCase
                 PaginaEmpleados.InputTelefonoDeOficina(row10);
                 PaginaEmpleados.InputNúmeroDeTelefonoMoviL(row11);
                 PaginaEmpleados.InputPuestolaboral(row12);
+                // Desplazarse hasta el input departamento
+                actions.MoveToElement(inputDepartamento);
+                actions.Perform();
                 PaginaEmpleados.BoxDesplegablePermisos(row13);
                 PaginaEmpleados.BoxDesplegableCalendario(row14);
                 PaginaEmpleados.InputFechaAlta(row15);
@@ -501,8 +515,6 @@ namespace TestCompact.TestCase
                 // Localizar el botón "Guardar"
                 IWebElement botonGuardar = Driver.FindElement(By.CssSelector("#save > img"));
 
-                Actions actions = new Actions(Driver);
-
                 // Desplazarse hasta el botón "Guardar"
                 actions.MoveToElement(botonGuardar);
                 actions.Perform();
@@ -516,12 +528,16 @@ namespace TestCompact.TestCase
 
         //Método que implementa el caso de alta de nueva persona,con los datos proporcionados desde el archivo Excel, comprueba la correcta verificación del alert de "La fecha de alta es necesaria" No consigo eliminar la hora
         [Test]
-        public void Test_009_verificación_la_fecha_de_alta_es_necesaria()
+        public void Test_008_verificación_la_fecha_de_alta_es_necesaria()
         {
             // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\jona\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
 
             Actions actions = new Actions(Driver);
+
+            IWebElement inputDepartamento = Driver.FindElement(By.Id("Departamento"));
+            // Localizar el campo de entrada por XPath
+            IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentIdTimeZone\"]/input"));
 
             //Datos para recorrer el Excel
             int inicioRow = 13;
@@ -567,17 +583,19 @@ namespace TestCompact.TestCase
                 PaginaEmpleados.InputTelefonoDeOficina(row10);
                 PaginaEmpleados.InputNúmeroDeTelefonoMoviL(row11);
                 PaginaEmpleados.InputPuestolaboral(row12);
+                // Desplazarse hasta el input departamento
+                actions.MoveToElement(inputDepartamento);
+                actions.Perform();
                 PaginaEmpleados.BoxDesplegablePermisos(row13);
                 PaginaEmpleados.BoxDesplegableCalendario(row14);
                 PaginaEmpleados.InputFechaAlta(row15);
                 PaginaEmpleados.InputFechaBaja(row16);
                 PaginaEmpleados.InputMensajeEspecial(row17);
-                // Localizar el campo de entrada por XPath
-                IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentIdTimeZone\"]/input"));
+
                 // Limpiar el contenido del campo de entrada
                 campoInput.Clear();
                 //Ingresar datos en input zona horaria
-                campoInput.SendKeys("(UTC-06:0adalajara, Mexico City, Monterrey");
+                campoInput.SendKeys(row18);
 
                 Thread.Sleep(100);
 
@@ -601,8 +619,8 @@ namespace TestCompact.TestCase
         [TearDown]
         public void AfterTest()
         {
-            LogsError logsError = new LogsError();
-            logsError.LogsErrors();
+            ResultadosTest ResultadosTest = new ResultadosTest();
+            ResultadosTest.LogsResultado();
 
             // Liberar los recursos asociados con el driver
             Driver.Quit();
