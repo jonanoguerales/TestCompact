@@ -9,6 +9,12 @@ namespace TestCompact.PageObjectModels
         private string usuarioLogin = "arturo.ceron@pyv.systems";
         private string contraseñaLogin = "Pruebas123";
 
+        //Url aplicación web
+        protected const string UrlProyecto = "http://zceqa.westus2.cloudapp.azure.com/";
+
+        // Ruta del archivo Excel
+        string urlFichero = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+
         public string ObtenerUsuarioLogin()
         {
             return usuarioLogin;
@@ -18,12 +24,14 @@ namespace TestCompact.PageObjectModels
         {
             return contraseñaLogin;
         }
+        public string ObtenerUrlFicheroExcel()
+        {
+            return urlFichero;
+        }
 
         //Selenium driver
         protected IWebDriver Driver;
 
-        //Url aplicación web
-        protected const string UrlProyecto = "http://zceqa.westus2.cloudapp.azure.com/";
 
         //Constructor
         public Inicio(IWebDriver driver)

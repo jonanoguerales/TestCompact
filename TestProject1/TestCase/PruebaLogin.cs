@@ -30,18 +30,18 @@ namespace TestCompact.TestCase
         }
 
         // Método para leer los datos del archivo Excel
-        public static IEnumerable<object[]> GetDataExcel(string filePath)
+        public static IEnumerable<object[]> GetDataExcel(string urlFichero)
         {
             // Verificar si el archivo existe
-            if (!File.Exists(filePath))
+            if (!File.Exists(urlFichero))
             {
-                throw new FileNotFoundException("El archivo Excel no existe.", filePath);
+                throw new FileNotFoundException("El archivo Excel no existe.", urlFichero);
             }
 
             List<object[]> loginData = new List<object[]>();
 
             // Abrir el archivo Excel
-            using (var package = new ExcelPackage(new FileInfo(filePath)))
+            using (var package = new ExcelPackage(new FileInfo(urlFichero)))
             {
                 var worksheet = package.Workbook.Worksheets[0]; // Suponiendo que los datos están en la primera hoja
 

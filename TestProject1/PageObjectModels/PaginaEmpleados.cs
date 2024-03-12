@@ -340,60 +340,66 @@ namespace TestCompact.PageObjectModels
         //Método para permisos de acceso
         public void BoxDesplegablePermisos(string textoSeleccionado)
         {
-            //Input permisos de acceso
-            IWebElement btnDesplegable = Driver.FindElement(By.Id("dropdownlistArrowcbPerfiles"));
-            btnDesplegable.Click();
-
-            Thread.Sleep(100);
-
-            IWebElement boxDesplegable = Driver.FindElement(By.CssSelector("#listBoxContentinnerListBoxcbPerfiles > div"));
-
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(100));
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id=\"listitem0innerListBoxcbPerfiles\"]/span")));
-
-            IReadOnlyCollection<IWebElement> dropdownOptions = boxDesplegable.FindElements(By.TagName("span"));
-            bool datoEncontrado = false;
-            foreach (IWebElement dropdownOption in dropdownOptions)
+            if(!string.IsNullOrEmpty(textoSeleccionado) && textoSeleccionado != "Vacío")
             {
-                if (dropdownOption.Text.Equals(textoSeleccionado))
+                //Input permisos de acceso
+                IWebElement btnDesplegable = Driver.FindElement(By.Id("dropdownlistArrowcbPerfiles"));
+                btnDesplegable.Click();
+
+                Thread.Sleep(100);
+
+                IWebElement boxDesplegable = Driver.FindElement(By.CssSelector("#listBoxContentinnerListBoxcbPerfiles > div"));
+
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(100));
+                wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id=\"listitem0innerListBoxcbPerfiles\"]/span")));
+
+                IReadOnlyCollection<IWebElement> dropdownOptions = boxDesplegable.FindElements(By.TagName("span"));
+                bool datoEncontrado = false;
+                foreach (IWebElement dropdownOption in dropdownOptions)
                 {
-                    dropdownOption.Click();
-                    datoEncontrado = true;
-                    break;
+                    if (dropdownOption.Text.Equals(textoSeleccionado))
+                    {
+                        dropdownOption.Click();
+                        datoEncontrado = true;
+                        break;
+                    }
                 }
-            }
-            // Si el dato no fue encontrado, lanzar una excepción
-            if (!datoEncontrado)
-            {
-                throw new ArgumentException($"El valor proporcionado: '{textoSeleccionado}', no está presente en las opciones de permisos de acceso.");
+                // Si el dato no fue encontrado, lanzar una excepción
+                if (!datoEncontrado)
+                {
+                    throw new ArgumentException($"El valor proporcionado: '{textoSeleccionado}', no está presente en las opciones de permisos de acceso.");
+                }
             }
         }
         //Método para calendario
         public void BoxDesplegableCalendario(string textoSeleccionado)
         {
-            //Input calendario
-            IWebElement btnDesplegableCalendario = Driver.FindElement(By.Id("dropdownlistArrowcbCalendario"));
-            btnDesplegableCalendario.Click();
-
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-
-            IWebElement boxDesplegableCalendario = Driver.FindElement(By.CssSelector("#listBoxContentinnerListBoxcbCalendario > div"));
-
-            IReadOnlyCollection<IWebElement> dropdownOptionsCalendarios = boxDesplegableCalendario.FindElements(By.TagName("span"));
-            bool datoEncontrado = false;
-            foreach (IWebElement dropdownOptionsCalendario in dropdownOptionsCalendarios)
+            if (!string.IsNullOrEmpty(textoSeleccionado) && textoSeleccionado != "Vacío")
             {
-                if (dropdownOptionsCalendario.Text.Equals(textoSeleccionado))
+                //Input calendario
+                IWebElement btnDesplegableCalendario = Driver.FindElement(By.Id("dropdownlistArrowcbCalendario"));
+                btnDesplegableCalendario.Click();
+
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+
+                IWebElement boxDesplegableCalendario = Driver.FindElement(By.CssSelector("#listBoxContentinnerListBoxcbCalendario > div"));
+
+                IReadOnlyCollection<IWebElement> dropdownOptionsCalendarios = boxDesplegableCalendario.FindElements(By.TagName("span"));
+                bool datoEncontrado = false;
+                foreach (IWebElement dropdownOptionsCalendario in dropdownOptionsCalendarios)
                 {
-                    dropdownOptionsCalendario.Click();
-                    datoEncontrado = true;
-                    break;
+                    if (dropdownOptionsCalendario.Text.Equals(textoSeleccionado))
+                    {
+                        dropdownOptionsCalendario.Click();
+                        datoEncontrado = true;
+                        break;
+                    }
                 }
-            }
-            // Si el dato no fue encontrado, lanzar una excepción
-            if (!datoEncontrado)
-            {
-                throw new ArgumentException($"El valor proporcionado: '{textoSeleccionado}', no está presente en las opciones de calendario.");
+                // Si el dato no fue encontrado, lanzar una excepción
+                if (!datoEncontrado)
+                {
+                    throw new ArgumentException($"El valor proporcionado: '{textoSeleccionado}', no está presente en las opciones de calendario.");
+                }
             }
         }
 
@@ -444,29 +450,32 @@ namespace TestCompact.PageObjectModels
         //Método para zona horaria
         public void BoxDesplegableZonaHoraria(string? dato)
         {
-            //Input zona horaria
-            IWebElement btnDesplegableZonaHoraria = Driver.FindElement(By.Id("dropdownlistArrowIdTimeZone"));
-            btnDesplegableZonaHoraria.Click();
-
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-
-            IWebElement boxDesplegableZonaHoraria = Driver.FindElement(By.XPath("/html/body/div[13]/div/div/div/div[2]/div"));
-
-            IReadOnlyCollection<IWebElement> dropdownOptionsZonaHorarias = boxDesplegableZonaHoraria.FindElements(By.TagName("span"));
-            bool datoEncontrado = false;
-            foreach (IWebElement dropdownOptionsZonaHoraria in dropdownOptionsZonaHorarias)
+            if (!string.IsNullOrEmpty(dato) && dato != "Vacío")
             {
-                if (dropdownOptionsZonaHoraria.Text.Equals(dato))
+                //Input zona horaria
+                IWebElement btnDesplegableZonaHoraria = Driver.FindElement(By.Id("dropdownlistArrowIdTimeZone"));
+                btnDesplegableZonaHoraria.Click();
+
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+
+                IWebElement boxDesplegableZonaHoraria = Driver.FindElement(By.XPath("/html/body/div[13]/div/div/div/div[2]/div"));
+
+                IReadOnlyCollection<IWebElement> dropdownOptionsZonaHorarias = boxDesplegableZonaHoraria.FindElements(By.TagName("span"));
+                bool datoEncontrado = false;
+                foreach (IWebElement dropdownOptionsZonaHoraria in dropdownOptionsZonaHorarias)
                 {
-                    dropdownOptionsZonaHoraria.Click();
-                    datoEncontrado = true;
-                    break;
+                    if (dropdownOptionsZonaHoraria.Text.Equals(dato))
+                    {
+                        dropdownOptionsZonaHoraria.Click();
+                        datoEncontrado = true;
+                        break;
+                    }
                 }
-            }
-            // Si el dato no fue encontrado, lanzar una excepción
-            if (!datoEncontrado)
-            {
-                throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de zona horaria.");
+                // Si el dato no fue encontrado, lanzar una excepción
+                if (!datoEncontrado)
+                {
+                    throw new ArgumentException($"El valor proporcionado: '{dato}', no está presente en las opciones de zona horaria.");
+                }
             }
         }
 

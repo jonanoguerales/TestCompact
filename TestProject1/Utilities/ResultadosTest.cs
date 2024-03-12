@@ -10,10 +10,10 @@ namespace TestCompact.Utilities
             string? errorMessage = TestContext.CurrentContext.Result.Message;
             TestStatus testStatus = TestContext.CurrentContext.Result.Outcome.Status;
 
-            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\resultadostest_log.txt"; // Ruta del archivo de logs
+            string urlFichero = @"C:\\Users\\JonathanNoguerales\\Desktop\\resultadostest_log.txt"; // Ruta del archivo de logs
 
             // Escribir el nombre del test, el resultado y el mensaje (si lo hay) en un archivo de texto
-            using (StreamWriter writer = File.AppendText(filePath))
+            using (StreamWriter writer = File.AppendText(urlFichero))
             {
                 writer.WriteLine();
                 writer.WriteLine($"Prueba realizada el : {DateTime.Now}");

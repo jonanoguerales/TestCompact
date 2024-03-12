@@ -71,8 +71,8 @@ namespace TestCompact.TestCase
         [Test]
         public void Test_001_verificación_el_nombre_es_necesario()
         {
-            // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            //Obtener direccion del fichero excel
+            string urlFichero = Inicio.ObtenerUrlFicheroExcel();
 
             //Datos para recorrer el Excel
             int inicioRow = 16;
@@ -81,7 +81,7 @@ namespace TestCompact.TestCase
             int finalCol = 8;
 
             // Obtener datos del archivo Excel
-            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(filePath, inicioRow, inicioCol, finalRow, finalCol);
+            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(urlFichero, inicioRow, inicioCol, finalRow, finalCol);
 
             // Iterar sobre los datos y ejecutar la prueba para cada conjunto de datos
             foreach (var datos in datosExcel)
@@ -121,8 +121,8 @@ namespace TestCompact.TestCase
         [Test]
         public void Test_002_verificación_el_primer_apellido_es_necesario()
         {
-            // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            //Obtener direccion del fichero excel
+            string urlFichero = Inicio.ObtenerUrlFicheroExcel();
 
             //Datos para recorrer el Excel
             int inicioRow = 6;
@@ -131,7 +131,7 @@ namespace TestCompact.TestCase
             int finalCol = 9;
 
             // Obtener datos del archivo Excel
-            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(filePath, inicioRow, inicioCol, finalRow, finalCol);
+            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(urlFichero, inicioRow, inicioCol, finalRow, finalCol);
 
             // Iterar sobre los datos y ejecutar la prueba para cada conjunto de datos
             foreach (var datos in datosExcel)
@@ -172,8 +172,8 @@ namespace TestCompact.TestCase
         [Test]
         public void Test_003_verificación_documento_de_identidad_es_necesario()
         {
-            // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            //Obtener direccion del fichero excel
+            string urlFichero = Inicio.ObtenerUrlFicheroExcel();
 
             //Datos para recorrer el Excel
             int inicioRow = 7;
@@ -182,7 +182,7 @@ namespace TestCompact.TestCase
             int finalCol = 12;
 
             // Obtener datos del archivo Excel
-            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(filePath, inicioRow, inicioCol, finalRow, finalCol);
+            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(urlFichero, inicioRow, inicioCol, finalRow, finalCol);
 
             // Iterar sobre los datos y ejecutar la prueba para cada conjunto de datos
             foreach (var datos in datosExcel)
@@ -230,8 +230,8 @@ namespace TestCompact.TestCase
         [Test]
         public void Test_004_verificación_el_numero_de_empleado_es_necesario()
         {
-            // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            //Obtener direccion del fichero excel
+            string urlFichero = Inicio.ObtenerUrlFicheroExcel();
 
             //Datos para recorrer el Excel
             int inicioRow = 8;
@@ -240,7 +240,7 @@ namespace TestCompact.TestCase
             int finalCol = 12;
 
             // Obtener datos del archivo Excel
-            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(filePath, inicioRow, inicioCol, finalRow, finalCol);
+            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(urlFichero, inicioRow, inicioCol, finalRow, finalCol);
 
             // Iterar sobre los datos y ejecutar la prueba para cada conjunto de datos
             foreach (var datos in datosExcel)
@@ -288,8 +288,8 @@ namespace TestCompact.TestCase
         [Test]
         public void Test_005_verificación_el_perfil_es_necesario()
         {
-            // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            //Obtener direccion del fichero excel
+            string urlFichero = Inicio.ObtenerUrlFicheroExcel();
 
             Actions actions = new Actions(Driver);
 
@@ -302,7 +302,7 @@ namespace TestCompact.TestCase
             int finalCol = 18;
 
             // Obtener datos del archivo Excel
-            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(filePath, inicioRow, inicioCol, finalRow, finalCol);
+            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(urlFichero, inicioRow, inicioCol, finalRow, finalCol);
 
             // Iterar sobre los datos y ejecutar la prueba para cada conjunto de datos
             foreach (var datos in datosExcel)
@@ -363,8 +363,8 @@ namespace TestCompact.TestCase
         [Test]
         public void Test_006_verificación_el_calendario_es_necesario()
         {
-            // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            //Obtener direccion del fichero excel
+            string urlFichero = Inicio.ObtenerUrlFicheroExcel();
 
             Actions actions = new Actions(Driver);
 
@@ -377,7 +377,7 @@ namespace TestCompact.TestCase
             int finalCol = 19;
 
             // Obtener datos del archivo Excel
-            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(filePath, inicioRow, inicioCol, finalRow, finalCol);
+            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(urlFichero, inicioRow, inicioCol, finalRow, finalCol);
 
             // Iterar sobre los datos y ejecutar la prueba para cada conjunto de datos
             foreach (var datos in datosExcel)
@@ -440,8 +440,8 @@ namespace TestCompact.TestCase
         [Test]
         public void Test_007_verificación_la_zona_horaria_es_necesaria()
         {
-            // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            //Obtener direccion del fichero excel
+            string urlFichero = Inicio.ObtenerUrlFicheroExcel();
 
             Actions actions = new Actions(Driver);
 
@@ -454,7 +454,7 @@ namespace TestCompact.TestCase
             int finalCol = 23;
 
             // Obtener datos del archivo Excel
-            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(filePath, inicioRow, inicioCol, finalRow, finalCol);
+            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(urlFichero, inicioRow, inicioCol, finalRow, finalCol);
 
             // Iterar sobre los datos y ejecutar la prueba para cada conjunto de datos
             foreach (var datos in datosExcel)
@@ -530,8 +530,8 @@ namespace TestCompact.TestCase
         [Test]
         public void Test_008_verificación_la_fecha_de_alta_es_necesaria()
         {
-            // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            //Obtener direccion del fichero excel
+            string urlFichero = Inicio.ObtenerUrlFicheroExcel();
 
             Actions actions = new Actions(Driver);
 
@@ -546,7 +546,7 @@ namespace TestCompact.TestCase
             int finalCol = 23;
 
             // Obtener datos del archivo Excel
-            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(filePath, inicioRow, inicioCol, finalRow, finalCol);
+            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(urlFichero, inicioRow, inicioCol, finalRow, finalCol);
 
             // Iterar sobre los datos y ejecutar la prueba para cada conjunto de datos
             foreach (var datos in datosExcel)

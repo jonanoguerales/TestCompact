@@ -72,8 +72,8 @@ namespace TestCompact.TestCase
         [Test]
         public void Test_001_editar_persona()
         {
-            // Ruta del archivo Excel
-            string filePath = @"C:\\Users\\JonathanNoguerales\\Desktop\\Script ZEIT COMPACT v0.2.xlsx";
+            //Obtener direccion del fichero excel
+           string urlFichero = Inicio.ObtenerUrlFicheroExcel();
 
             Actions actions = new Actions(Driver);
 
@@ -87,7 +87,7 @@ namespace TestCompact.TestCase
             int finalCol = 33;
 
             // Obtener datos del archivo Excel
-            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(filePath,inicioRow,inicioCol,finalRow,finalCol);
+            IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(urlFichero, inicioRow,inicioCol,finalRow,finalCol);
 
             // Iterar sobre los datos y ejecutar la prueba para cada conjunto de datos
             foreach (var datos in datosExcel)
