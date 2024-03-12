@@ -446,9 +446,9 @@ namespace TestCompact.TestCase
             IWebElement inputDepartamento = Driver.FindElement(By.Id("Departamento"));
 
             //Datos para recorrer el Excel
-            int inicioRow = 11;
+            int inicioRow = 12;
             int inicioCol = 6;
-            int finalRow = 11;
+            int finalRow = 12;
             int finalCol = 23;
 
             // Obtener datos del archivo Excel

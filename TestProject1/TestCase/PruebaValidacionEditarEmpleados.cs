@@ -125,9 +125,9 @@ namespace TestCompact.TestCase
             string urlFichero = Inicio.ObtenerUrlFicheroExcel();
 
             //Datos para recorrer el Excel
-            int inicioRow = 6;
+            int inicioRow = 17;
             int inicioCol = 6;
-            int finalRow = 6;
+            int finalRow = 17;
             int finalCol = 9;
 
             // Obtener datos del archivo Excel
@@ -176,9 +176,9 @@ namespace TestCompact.TestCase
             string urlFichero = Inicio.ObtenerUrlFicheroExcel();
 
             //Datos para recorrer el Excel
-            int inicioRow = 7;
+            int inicioRow = 18;
             int inicioCol = 6;
-            int finalRow = 7;
+            int finalRow = 18;
             int finalCol = 12;
 
             // Obtener datos del archivo Excel
@@ -234,10 +234,10 @@ namespace TestCompact.TestCase
             string urlFichero = Inicio.ObtenerUrlFicheroExcel();
 
             //Datos para recorrer el Excel
-            int inicioRow = 8;
+            int inicioRow = 19;
             int inicioCol = 6;
-            int finalRow = 8;
-            int finalCol = 12;
+            int finalRow = 19;
+            int finalCol = 7;
 
             // Obtener datos del archivo Excel
             IEnumerable<object[]> datosExcel = ExcelDataReader.GetDataExcel(urlFichero, inicioRow, inicioCol, finalRow, finalCol);
@@ -247,20 +247,10 @@ namespace TestCompact.TestCase
             {
                 string row1 = (string)datos[0];
                 string row2 = (string)datos[1];
-                string row3 = (string)datos[2];
-                string row4 = (string)datos[3];
-                string row5 = (string)datos[4];
-                string row6 = (string)datos[5];
-                string row7 = (string)datos[6];
 
                 // Ejecutar la prueba con los datos obtenidos del Excel
                 PaginaEmpleados.InputNumEmpleado(row1);
                 PaginaEmpleados.InputIdentificadorNomina(row2);
-                PaginaEmpleados.InputNombre(row3);
-                PaginaEmpleados.InputPrimerApellido(row4);
-                PaginaEmpleados.InputSegundoApellido(row5);
-                PaginaEmpleados.InputNombreCorto(row6);
-                PaginaEmpleados.InputDocumentoDeIdentidad(row7);
 
                 Thread.Sleep(100);
 
@@ -296,9 +286,9 @@ namespace TestCompact.TestCase
             IWebElement inputDepartamento = Driver.FindElement(By.Id("Departamento"));
 
             //Datos para recorrer el Excel
-            int inicioRow = 9;
+            int inicioRow = 20;
             int inicioCol = 6;
-            int finalRow = 9;
+            int finalRow = 20;
             int finalCol = 18;
 
             // Obtener datos del archivo Excel
@@ -371,9 +361,9 @@ namespace TestCompact.TestCase
             IWebElement inputDepartamento = Driver.FindElement(By.Id("Departamento"));
 
             //Datos para recorrer el Excel
-            int inicioRow = 10;
+            int inicioRow = 21;
             int inicioCol = 6;
-            int finalRow = 10;
+            int finalRow = 21;
             int finalCol = 19;
 
             // Obtener datos del archivo Excel
@@ -448,9 +438,9 @@ namespace TestCompact.TestCase
             IWebElement inputDepartamento = Driver.FindElement(By.Id("Departamento"));
 
             //Datos para recorrer el Excel
-            int inicioRow = 11;
+            int inicioRow = 23;
             int inicioCol = 6;
-            int finalRow = 11;
+            int finalRow = 23;
             int finalCol = 23;
 
             // Obtener datos del archivo Excel
@@ -499,12 +489,7 @@ namespace TestCompact.TestCase
                 PaginaEmpleados.InputFechaAlta(row15);
                 PaginaEmpleados.InputFechaBaja(row16);
                 PaginaEmpleados.InputMensajeEspecial(row17);
-                // Localizar el campo de entrada por XPath
-                IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentIdTimeZone\"]/input"));
-
-                // Limpiar el contenido del campo de entrada
-                campoInput.Clear();
-                campoInput.SendKeys("-- Seleccione una opción --");
+                PaginaEmpleados.BoxDesplegableZonaHoraria(row18);
 
                 Thread.Sleep(100);
 
@@ -536,13 +521,11 @@ namespace TestCompact.TestCase
             Actions actions = new Actions(Driver);
 
             IWebElement inputDepartamento = Driver.FindElement(By.Id("Departamento"));
-            // Localizar el campo de entrada por XPath
-            IWebElement campoInput = Driver.FindElement(By.XPath("//*[@id=\"dropdownlistContentIdTimeZone\"]/input"));
-
+           
             //Datos para recorrer el Excel
-            int inicioRow = 13;
+            int inicioRow = 24;
             int inicioCol = 6;
-            int finalRow = 13;
+            int finalRow = 24;
             int finalCol = 23;
 
             // Obtener datos del archivo Excel
@@ -591,11 +574,7 @@ namespace TestCompact.TestCase
                 PaginaEmpleados.InputFechaAlta(row15);
                 PaginaEmpleados.InputFechaBaja(row16);
                 PaginaEmpleados.InputMensajeEspecial(row17);
-
-                // Limpiar el contenido del campo de entrada
-                campoInput.Clear();
-                //Ingresar datos en input zona horaria
-                campoInput.SendKeys(row18);
+                PaginaEmpleados.BoxDesplegableZonaHoraria(row18);
 
                 Thread.Sleep(100);
 
